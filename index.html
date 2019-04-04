@@ -1,0 +1,19 @@
+<html>
+
+<head>
+  <script src="https://aframe.io/releases/0.9.0/aframe.min.js"></script>
+</head>
+
+<body>
+  <a-scene>
+    <a-assets>
+      <a-asset-item id="tree-obj" src="./models/cat_01_color05.obj"></a-asset-item>
+      <!-- <a-asset-item id="tree-mtl" src="/path/to/tree.mtl"></a-asset-item> -->
+    </a-assets>
+
+    <a-entity id='cat' obj-model="obj: #tree-obj; mtl: #tree-mtl" position="0 1.5 -3" rotation="0 1.5 0" scale="0.03 0.03 0.03"></a-entity>
+    <a-sky color="#ECECEC"></a-sky>
+  </a-scene>
+</body>
+
+</html>
