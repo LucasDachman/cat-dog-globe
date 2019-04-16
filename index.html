@@ -1,137 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-  	<meta charset="UTF-8">
-	<title>Cat-Dog-Globe</title>
-    <script src="https://aframe.io/releases/0.9.0/aframe.min.js"></script>
-    <!-- <script src="js/aframe.js"></script> -->
-    <!-- <script src="js/aframe.min.js"></script> -->
-    <script src="//cdn.rawgit.com/donmccurdy/aframe-extras/v3.13.1/dist/aframe-extras.min.js"></script>
-  </head>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Cat-Dog-Globe</title>
+  <script src="https://aframe.io/releases/0.9.0/aframe.min.js"></script>
+  <!-- <script src="js/aframe.js"></script> -->
+  <!-- <script src="js/aframe.min.js"></script> -->
+  <script src="//cdn.rawgit.com/donmccurdy/aframe-extras/v3.13.1/dist/aframe-extras.min.js"></script>
+  <script src="./script.js" defer></script>
+</head>
+
 <body>
 
   <a-scene>
     <a-assets>
-    	<a-asset-item id="cat-obj" src="models/cat_01_color05.obj"></a-asset-item> 
+      <a-asset-item id="cat-obj" src="models/cat_01_color05.obj"></a-asset-item>
       <!-- <a-asset-item id="tree-obj" src="./models/cat_01_color05.obj"></a-asset-item> -->
       <a-asset-item id="cat-mtl" src="textures/cat-texture.jpg"></a-asset-item>
       <img id="fur" src="textures/cat-texture.jpg">
     </a-assets>
+    <a-entity position='1 2 10'>
+      <a-camera/>
+    </a-entity>
 
-<!--     <a-sphere obj-model="obj: models/cat_01_color05.obj; position="0 0 -30" scale="0.05 0.05 0.05"></a-sphere> -->
+    <a-sphere dynamic-body id='cat1' obj-model="obj: #cat-obj;" src="#fur" position="0 1.5 -3" rotation="0 1.5 0"
+      scale="0.03 0.03 0.03"></a-sphere>
 
-	<a-sphere position="0 0 -10" scale="1 1 1" rotation="0 0 0" color="yellow" src="#fur"></a-sphere>
-     <a-sphere dynamic-body id='cat1' obj-model="obj: #cat-obj;" src="#fur" position="0 1.5 -3" rotation="0 1.5 0" scale="0.03 0.03 0.03"></a-sphere> 
-     <a-sphere dynamic-body id='cat2' obj-model="obj: #cat-obj;" src="#fur" position="0 2.5 -3" rotation="0 1.5 0" scale="0.03 0.03 0.03"></a-sphere> 
-     <a-sphere dynamic-body id='cat3' obj-model="obj: #cat-obj;" src="#fur" position="0 3.5 -3" rotation="0 1.5 0" scale="0.03 0.03 0.03"></a-sphere> 
-     <a-sphere dynamic-body id='cat4' obj-model="obj: #cat-obj;" src="#fur" position="0 4.5 -3" rotation="0 1.5 0" scale="0.03 0.03 0.03"></a-sphere> 
-     <a-sphere dynamic-body id='cat5' obj-model="obj: #cat-obj;" src="#fur" position="0 5.5 -3" rotation="0 1.5 0" scale="0.03 0.03 0.03"></a-sphere> 
-     <a-sphere dynamic-body id='cat6' obj-model="obj: #cat-obj;" src="#fur" position="0 6.5 -3" rotation="0 1.5 0" scale="0.03 0.03 0.03"></a-sphere> 
-     <a-sphere dynamic-body id='cat7' obj-model="obj: #cat-obj;" src="#fur" position="0 7.5 -3" rotation="0 1.5 0" scale="0.03 0.03 0.03"></a-sphere> 
-     <a-sphere dynamic-body id='cat8' obj-model="obj: #cat-obj;" src="#fur" position="0 8.5 -3" rotation="0 1.5 0" scale="0.03 0.03 0.03"></a-sphere> 
-     <a-sphere dynamic-body id='cat9' obj-model="obj: #cat-obj;" src="#fur" position="0 9.5 -3" rotation="0 1.5 0" scale="0.03 0.03 0.03"></a-sphere> 
-     <a-sphere dynamic-body id='cat10' obj-model="obj: #cat-obj;" src="#fur" position="0 10.5 -3" rotation="0 1.5 0" scale="0.03 0.03 0.03"></a-sphere> 
-     <a-sphere dynamic-body id='cat11' obj-model="obj: #cat-obj;" src="#fur" position="0 1.15 -3" rotation="0 1.5 0" scale="0.03 0.03 0.03"></a-sphere> 
-     <a-sphere dynamic-body id='cat12' obj-model="obj: #cat-obj;" src="#fur" position="0 12.5 -3" rotation="0 1.5 0" scale="0.03 0.03 0.03"></a-sphere> 
-     <a-sphere dynamic-body id='cat13' obj-model="obj: #cat-obj;" src="#fur" position="0 13.5 -3" rotation="0 1.5 0" scale="0.03 0.03 0.03"></a-sphere> 
-     <a-sphere dynamic-body id='cat14' obj-model="obj: #cat-obj;" src="#fur" position="0 14.5 -3" rotation="0 1.5 0" scale="0.03 0.03 0.03"></a-sphere> 
-     <a-sphere dynamic-body id='cat14' obj-model="obj: #cat-obj;" src="#fur" position="0 15.5 -3" rotation="0 1.5 0" scale="0.03 0.03 0.03"></a-sphere> 
-     <a-sphere dynamic-body id='cat15' obj-model="obj: #cat-obj;" src="#fur" position="0 16.5 -3" rotation="0 1.5 0" scale="0.03 0.03 0.03"></a-sphere> 
-     <a-sphere dynamic-body id='cat16' obj-model="obj: #cat-obj;" src="#fur" position="0 17.5 -3" rotation="0 1.5 0" scale="0.03 0.03 0.03"></a-sphere> 
-     <a-sphere dynamic-body id='cat17' obj-model="obj: #cat-obj;" src="#fur" position="0 18.5 -3" rotation="0 1.5 0" scale="0.03 0.03 0.03"></a-sphere> 
-     <a-sphere dynamic-body id='cat18' obj-model="obj: #cat-obj;" src="#fur" position="0 19.5 -3" rotation="0 1.5 0" scale="0.03 0.03 0.03"></a-sphere> 
-     <a-sphere dynamic-body id='cat19' obj-model="obj: #cat-obj;" src="#fur" position="0 20.5 -3" rotation="0 1.5 0" scale="0.03 0.03 0.03"></a-sphere>
-     <a-sphere dynamic-body id='cat1' obj-model="obj: #cat-obj;" src="#fur" position="0 1.5 -3" rotation="0 1.5 0" scale="0.03 0.03 0.03"></a-sphere> 
-     <a-sphere dynamic-body id='cat2' obj-model="obj: #cat-obj;" src="#fur" position="0 2.5 -3" rotation="0 1.5 0" scale="0.03 0.03 0.03"></a-sphere> 
-     <a-sphere dynamic-body id='cat3' obj-model="obj: #cat-obj;" src="#fur" position="0 3.5 -3" rotation="0 1.5 0" scale="0.03 0.03 0.03"></a-sphere> 
-     <a-sphere dynamic-body id='cat4' obj-model="obj: #cat-obj;" src="#fur" position="0 4.5 -3" rotation="0 1.5 0" scale="0.03 0.03 0.03"></a-sphere> 
-     <a-sphere dynamic-body id='cat5' obj-model="obj: #cat-obj;" src="#fur" position="0 5.5 -3" rotation="0 1.5 0" scale="0.03 0.03 0.03"></a-sphere> 
-     <a-sphere dynamic-body id='cat6' obj-model="obj: #cat-obj;" src="#fur" position="0 6.5 -3" rotation="0 1.5 0" scale="0.03 0.03 0.03"></a-sphere> 
-     <a-sphere dynamic-body id='cat7' obj-model="obj: #cat-obj;" src="#fur" position="0 7.5 -3" rotation="0 1.5 0" scale="0.03 0.03 0.03"></a-sphere> 
-     <a-sphere dynamic-body id='cat8' obj-model="obj: #cat-obj;" src="#fur" position="0 8.5 -3" rotation="0 1.5 0" scale="0.03 0.03 0.03"></a-sphere> 
-     <a-sphere dynamic-body id='cat9' obj-model="obj: #cat-obj;" src="#fur" position="0 9.5 -3" rotation="0 1.5 0" scale="0.03 0.03 0.03"></a-sphere> 
-     <a-sphere dynamic-body id='cat10' obj-model="obj: #cat-obj;" src="#fur" position="0 10.5 -3" rotation="0 1.5 0" scale="0.03 0.03 0.03"></a-sphere> 
-     <a-sphere dynamic-body id='cat11' obj-model="obj: #cat-obj;" src="#fur" position="0 1.15 -3" rotation="0 1.5 0" scale="0.03 0.03 0.03"></a-sphere> 
-     <a-sphere dynamic-body id='cat12' obj-model="obj: #cat-obj;" src="#fur" position="0 12.5 -3" rotation="0 1.5 0" scale="0.03 0.03 0.03"></a-sphere> 
-     <a-sphere dynamic-body id='cat13' obj-model="obj: #cat-obj;" src="#fur" position="0 13.5 -3" rotation="0 1.5 0" scale="0.03 0.03 0.03"></a-sphere> 
-     <a-sphere dynamic-body id='cat14' obj-model="obj: #cat-obj;" src="#fur" position="0 14.5 -3" rotation="0 1.5 0" scale="0.03 0.03 0.03"></a-sphere> 
-     <a-sphere dynamic-body id='cat14' obj-model="obj: #cat-obj;" src="#fur" position="0 15.5 -3" rotation="0 1.5 0" scale="0.03 0.03 0.03"></a-sphere> 
-     <a-sphere dynamic-body id='cat15' obj-model="obj: #cat-obj;" src="#fur" position="0 16.5 -3" rotation="0 1.5 0" scale="0.03 0.03 0.03"></a-sphere> 
-     <a-sphere dynamic-body id='cat16' obj-model="obj: #cat-obj;" src="#fur" position="0 17.5 -3" rotation="0 1.5 0" scale="0.03 0.03 0.03"></a-sphere> 
-     <a-sphere dynamic-body id='cat17' obj-model="obj: #cat-obj;" src="#fur" position="0 18.5 -3" rotation="0 1.5 0" scale="0.03 0.03 0.03"></a-sphere> 
-     <a-sphere dynamic-body id='cat18' obj-model="obj: #cat-obj;" src="#fur" position="0 19.5 -3" rotation="0 1.5 0" scale="0.03 0.03 0.03"></a-sphere> 
-     <a-sphere dynamic-body id='cat19' obj-model="obj: #cat-obj;" src="#fur" position="0 20.5 -3" rotation="0 1.5 0" scale="0.03 0.03 0.03"></a-sphere>
-     <a-sphere dynamic-body id='cat1' obj-model="obj: #cat-obj;" src="#fur" position="0 1.5 -3" rotation="0 1.5 0" scale="0.03 0.03 0.03"></a-sphere> 
-     <a-sphere dynamic-body id='cat2' obj-model="obj: #cat-obj;" src="#fur" position="0 2.5 -3" rotation="0 1.5 0" scale="0.03 0.03 0.03"></a-sphere> 
-     <a-sphere dynamic-body id='cat3' obj-model="obj: #cat-obj;" src="#fur" position="0 3.5 -3" rotation="0 1.5 0" scale="0.03 0.03 0.03"></a-sphere> 
-     <a-sphere dynamic-body id='cat4' obj-model="obj: #cat-obj;" src="#fur" position="0 4.5 -3" rotation="0 1.5 0" scale="0.03 0.03 0.03"></a-sphere> 
-     <a-sphere dynamic-body id='cat5' obj-model="obj: #cat-obj;" src="#fur" position="0 5.5 -3" rotation="0 1.5 0" scale="0.03 0.03 0.03"></a-sphere> 
-     <a-sphere dynamic-body id='cat6' obj-model="obj: #cat-obj;" src="#fur" position="0 6.5 -3" rotation="0 1.5 0" scale="0.03 0.03 0.03"></a-sphere> 
-     <a-sphere dynamic-body id='cat7' obj-model="obj: #cat-obj;" src="#fur" position="0 7.5 -3" rotation="0 1.5 0" scale="0.03 0.03 0.03"></a-sphere> 
-     <a-sphere dynamic-body id='cat8' obj-model="obj: #cat-obj;" src="#fur" position="0 8.5 -3" rotation="0 1.5 0" scale="0.03 0.03 0.03"></a-sphere> 
-     <a-sphere dynamic-body id='cat9' obj-model="obj: #cat-obj;" src="#fur" position="0 9.5 -3" rotation="0 1.5 0" scale="0.03 0.03 0.03"></a-sphere> 
-     <a-sphere dynamic-body id='cat10' obj-model="obj: #cat-obj;" src="#fur" position="0 10.5 -3" rotation="0 1.5 0" scale="0.03 0.03 0.03"></a-sphere> 
-     <a-sphere dynamic-body id='cat11' obj-model="obj: #cat-obj;" src="#fur" position="0 1.15 -3" rotation="0 1.5 0" scale="0.03 0.03 0.03"></a-sphere> 
-     <a-sphere dynamic-body id='cat12' obj-model="obj: #cat-obj;" src="#fur" position="0 12.5 -3" rotation="0 1.5 0" scale="0.03 0.03 0.03"></a-sphere> 
-     <a-sphere dynamic-body id='cat13' obj-model="obj: #cat-obj;" src="#fur" position="0 13.5 -3" rotation="0 1.5 0" scale="0.03 0.03 0.03"></a-sphere> 
-     <a-sphere dynamic-body id='cat14' obj-model="obj: #cat-obj;" src="#fur" position="0 14.5 -3" rotation="0 1.5 0" scale="0.03 0.03 0.03"></a-sphere> 
-     <a-sphere dynamic-body id='cat14' obj-model="obj: #cat-obj;" src="#fur" position="0 15.5 -3" rotation="0 1.5 0" scale="0.03 0.03 0.03"></a-sphere> 
-     <a-sphere dynamic-body id='cat15' obj-model="obj: #cat-obj;" src="#fur" position="0 16.5 -3" rotation="0 1.5 0" scale="0.03 0.03 0.03"></a-sphere> 
-     <a-sphere dynamic-body id='cat16' obj-model="obj: #cat-obj;" src="#fur" position="0 17.5 -3" rotation="0 1.5 0" scale="0.03 0.03 0.03"></a-sphere> 
-     <a-sphere dynamic-body id='cat17' obj-model="obj: #cat-obj;" src="#fur" position="0 18.5 -3" rotation="0 1.5 0" scale="0.03 0.03 0.03"></a-sphere> 
-     <a-sphere dynamic-body id='cat18' obj-model="obj: #cat-obj;" src="#fur" position="0 19.5 -3" rotation="0 1.5 0" scale="0.03 0.03 0.03"></a-sphere> 
-     <a-sphere dynamic-body id='cat19' obj-model="obj: #cat-obj;" src="#fur" position="0 20.5 -3" rotation="0 1.5 0" scale="0.03 0.03 0.03"></a-sphere>
-     <a-sphere dynamic-body id='cat1' obj-model="obj: #cat-obj;" src="#fur" position="0 1.5 -3" rotation="0 1.5 0" scale="0.03 0.03 0.03"></a-sphere> 
-     <a-sphere dynamic-body id='cat2' obj-model="obj: #cat-obj;" src="#fur" position="0 2.5 -3" rotation="0 1.5 0" scale="0.03 0.03 0.03"></a-sphere> 
-     <a-sphere dynamic-body id='cat3' obj-model="obj: #cat-obj;" src="#fur" position="0 3.5 -3" rotation="0 1.5 0" scale="0.03 0.03 0.03"></a-sphere> 
-     <a-sphere dynamic-body id='cat4' obj-model="obj: #cat-obj;" src="#fur" position="0 4.5 -3" rotation="0 1.5 0" scale="0.03 0.03 0.03"></a-sphere> 
-     <a-sphere dynamic-body id='cat5' obj-model="obj: #cat-obj;" src="#fur" position="0 5.5 -3" rotation="0 1.5 0" scale="0.03 0.03 0.03"></a-sphere> 
-     <a-sphere dynamic-body id='cat6' obj-model="obj: #cat-obj;" src="#fur" position="0 6.5 -3" rotation="0 1.5 0" scale="0.03 0.03 0.03"></a-sphere> 
-     <a-sphere dynamic-body id='cat7' obj-model="obj: #cat-obj;" src="#fur" position="0 7.5 -3" rotation="0 1.5 0" scale="0.03 0.03 0.03"></a-sphere> 
-     <a-sphere dynamic-body id='cat8' obj-model="obj: #cat-obj;" src="#fur" position="0 8.5 -3" rotation="0 1.5 0" scale="0.03 0.03 0.03"></a-sphere> 
-     <a-sphere dynamic-body id='cat9' obj-model="obj: #cat-obj;" src="#fur" position="0 9.5 -3" rotation="0 1.5 0" scale="0.03 0.03 0.03"></a-sphere> 
-     <a-sphere dynamic-body id='cat10' obj-model="obj: #cat-obj;" src="#fur" position="0 10.5 -3" rotation="0 1.5 0" scale="0.03 0.03 0.03"></a-sphere> 
-     <a-sphere dynamic-body id='cat11' obj-model="obj: #cat-obj;" src="#fur" position="0 1.15 -3" rotation="0 1.5 0" scale="0.03 0.03 0.03"></a-sphere> 
-     <a-sphere dynamic-body id='cat12' obj-model="obj: #cat-obj;" src="#fur" position="0 12.5 -3" rotation="0 1.5 0" scale="0.03 0.03 0.03"></a-sphere> 
-     <a-sphere dynamic-body id='cat13' obj-model="obj: #cat-obj;" src="#fur" position="0 13.5 -3" rotation="0 1.5 0" scale="0.03 0.03 0.03"></a-sphere> 
-     <a-sphere dynamic-body id='cat14' obj-model="obj: #cat-obj;" src="#fur" position="0 14.5 -3" rotation="0 1.5 0" scale="0.03 0.03 0.03"></a-sphere> 
-     <a-sphere dynamic-body id='cat14' obj-model="obj: #cat-obj;" src="#fur" position="0 15.5 -3" rotation="0 1.5 0" scale="0.03 0.03 0.03"></a-sphere> 
-     <a-sphere dynamic-body id='cat15' obj-model="obj: #cat-obj;" src="#fur" position="0 16.5 -3" rotation="0 1.5 0" scale="0.03 0.03 0.03"></a-sphere> 
-     <a-sphere dynamic-body id='cat16' obj-model="obj: #cat-obj;" src="#fur" position="0 17.5 -3" rotation="0 1.5 0" scale="0.03 0.03 0.03"></a-sphere> 
-     <a-sphere dynamic-body id='cat17' obj-model="obj: #cat-obj;" src="#fur" position="0 18.5 -3" rotation="0 1.5 0" scale="0.03 0.03 0.03"></a-sphere> 
-     <a-sphere dynamic-body id='cat18' obj-model="obj: #cat-obj;" src="#fur" position="0 19.5 -3" rotation="0 1.5 0" scale="0.03 0.03 0.03"></a-sphere> 
-     <a-sphere dynamic-body id='cat19' obj-model="obj: #cat-obj;" src="#fur" position="0 20.5 -3" rotation="0 1.5 0" scale="0.03 0.03 0.03"></a-sphere>
-     <a-sphere dynamic-body id='cat1' obj-model="obj: #cat-obj;" src="#fur" position="0 1.5 -3" rotation="0 1.5 0" scale="0.03 0.03 0.03"></a-sphere> 
-     <a-sphere dynamic-body id='cat2' obj-model="obj: #cat-obj;" src="#fur" position="0 2.5 -3" rotation="0 1.5 0" scale="0.03 0.03 0.03"></a-sphere> 
-     <a-sphere dynamic-body id='cat3' obj-model="obj: #cat-obj;" src="#fur" position="0 3.5 -3" rotation="0 1.5 0" scale="0.03 0.03 0.03"></a-sphere> 
-     <a-sphere dynamic-body id='cat4' obj-model="obj: #cat-obj;" src="#fur" position="0 4.5 -3" rotation="0 1.5 0" scale="0.03 0.03 0.03"></a-sphere> 
-     <a-sphere dynamic-body id='cat5' obj-model="obj: #cat-obj;" src="#fur" position="0 5.5 -3" rotation="0 1.5 0" scale="0.03 0.03 0.03"></a-sphere> 
-     <a-sphere dynamic-body id='cat6' obj-model="obj: #cat-obj;" src="#fur" position="0 6.5 -3" rotation="0 1.5 0" scale="0.03 0.03 0.03"></a-sphere> 
-     <a-sphere dynamic-body id='cat7' obj-model="obj: #cat-obj;" src="#fur" position="0 7.5 -3" rotation="0 1.5 0" scale="0.03 0.03 0.03"></a-sphere> 
-     <a-sphere dynamic-body id='cat8' obj-model="obj: #cat-obj;" src="#fur" position="0 8.5 -3" rotation="0 1.5 0" scale="0.03 0.03 0.03"></a-sphere> 
-     <a-sphere dynamic-body id='cat9' obj-model="obj: #cat-obj;" src="#fur" position="0 9.5 -3" rotation="0 1.5 0" scale="0.03 0.03 0.03"></a-sphere> 
-     <a-sphere dynamic-body id='cat10' obj-model="obj: #cat-obj;" src="#fur" position="0 10.5 -3" rotation="0 1.5 0" scale="0.03 0.03 0.03"></a-sphere> 
-     <a-sphere dynamic-body id='cat11' obj-model="obj: #cat-obj;" src="#fur" position="0 1.15 -3" rotation="0 1.5 0" scale="0.03 0.03 0.03"></a-sphere> 
-     <a-sphere dynamic-body id='cat12' obj-model="obj: #cat-obj;" src="#fur" position="0 12.5 -3" rotation="0 1.5 0" scale="0.03 0.03 0.03"></a-sphere> 
-     <a-sphere dynamic-body id='cat13' obj-model="obj: #cat-obj;" src="#fur" position="0 13.5 -3" rotation="0 1.5 0" scale="0.03 0.03 0.03"></a-sphere> 
-     <a-sphere dynamic-body id='cat14' obj-model="obj: #cat-obj;" src="#fur" position="0 14.5 -3" rotation="0 1.5 0" scale="0.03 0.03 0.03"></a-sphere> 
-     <a-sphere dynamic-body id='cat14' obj-model="obj: #cat-obj;" src="#fur" position="0 15.5 -3" rotation="0 1.5 0" scale="0.03 0.03 0.03"></a-sphere> 
-     <a-sphere dynamic-body id='cat15' obj-model="obj: #cat-obj;" src="#fur" position="0 16.5 -3" rotation="0 1.5 0" scale="0.03 0.03 0.03"></a-sphere> 
-     <a-sphere dynamic-body id='cat16' obj-model="obj: #cat-obj;" src="#fur" position="0 17.5 -3" rotation="0 1.5 0" scale="0.03 0.03 0.03"></a-sphere> 
-     <a-sphere dynamic-body id='cat17' obj-model="obj: #cat-obj;" src="#fur" position="0 18.5 -3" rotation="0 1.5 0" scale="0.03 0.03 0.03"></a-sphere> 
-     <a-sphere dynamic-body id='cat18' obj-model="obj: #cat-obj;" src="#fur" position="0 19.5 -3" rotation="0 1.5 0" scale="0.03 0.03 0.03"></a-sphere> 
-     <a-sphere dynamic-body id='cat19' obj-model="obj: #cat-obj;" src="#fur" position="0 20.5 -3" rotation="0 1.5 0" scale="0.03 0.03 0.03"></a-sphere>
-     
     <a-sky color="lightblue"></a-sky>
 
-    <a-plane static-body id='floor' position="0 0 0" rotation="-90 0 0" width="30" height="30" color="black" material="transparent: true; opacity: 0.2"></a-plane>
-    <a-box static-body position="-9.72722 4.5 9.7392" scale="1 10 30" rotation="" "="" material="" geometry="" id="wall1"></a-box>
-    <a-box static-body position="0 4.5 10.02468" scale="1 10 30" rotation="0 90" "="" material="" geometry="" id="wall2"></a-box>
-    <a-box static-body position="15 4.5 7.30663" scale="1 10 30" rotation="" "="" material="" geometry="" id="wall3"></a-box>
-    <<a-box static-body position="2.84187 4.5 -4.51413" scale="1 10 30" rotation="0 90" "="" material="" geometry="" id="wall4"></a-box>
-    <a-entity id="container"></a-entity>
+    <a-plane static-body id='floor' position="0 0 0" rotation="-90 0 0" width="30" height="30" color="white"
+      material="transparent: true; opacity: 1"></a-plane>
+    <a-box static-body position="-9.72722 4.5 9.7392" scale="1 10 30" rotation="" "="" material="" geometry="" id="
+      wall1"></a-box>
+    <a-box static-body position="0 4.5 10.02468" scale="1 10 30" rotation="0 90" "="" material="" geometry="" id="
+      wall2"></a-box>
+    <a-box static-body position="15 4.5 7.30663" scale="1 10 30" rotation="" "="" material="" geometry="" id=" wall3">
+    </a-box>
+    <<a-box static-body position="2.84187 4.5 -4.51413" scale="1 10 30"
+      rotation="0 90" "="" material="" geometry="" id=" wall4">
+      </a-box>
   </a-scene>
 </body>
 
 </html>
-
