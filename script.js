@@ -9,12 +9,13 @@ setInterval(function () {
     const y = String(getRandom(20, 30));
     const z = String(getRandom(-5, 5));
     const position = x + ' ' + y + ' ' + z;
+    const yaw = String(getRandom(0, 360));
     const cat = document.createElement('a-box');
     cat.setAttribute('obj-model', 'obj: #cat-obj;');
     cat.setAttribute('src', '#fur');
     cat.setAttribute('scale', '0.03 0.03 0.03');
     cat.setAttribute('position', position);
-    cat.setAttribute('rotation', '5 1.5 0');
+    cat.setAttribute('rotation', '5 ' + yaw + ' 0');
     cat.setAttribute('dynamic-body', {
         shape: 'box',
         mass: 1.5,
