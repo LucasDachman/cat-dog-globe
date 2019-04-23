@@ -66,3 +66,7 @@ scene.addEventListener('click', function (e) {
         // location.reload();
     }
 });
+
+const mAudio = new Audio('audio.wav');
+mAudio.loop = true;
+mAudio.play();
