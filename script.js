@@ -57,21 +57,20 @@ setInterval(function () {
     scene.appendChild(dog);
 }, 600);
 
+const mAudio = new Audio('audio.wav');
+mAudio.loop = true;
+
 scene.addEventListener('click', function (e) {
     if (e.target.type != 'div') {
         const animals = document.querySelectorAll('.animal');
         for (let i = 0; i < animals.length; i++) {
             animals[i].parentNode.removeChild(animals[i]);
         }
-        // location.reload();
+        mAudio.play().then(function () {
+            console.log('Audio started!');
+        }).catch(function (error) {
+            console.log('audio not started')
+            throw error;
+        });
     }
-});
-
-const mAudio = new Audio('audio.wav');
-mAudio.loop = true;
-mAudio.play().then(function (err, res) {
-    if (err) console.log(err);
-    else console.log(res);
-}).catch(function(error) {
-    console.log(error);
 });
