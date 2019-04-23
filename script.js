@@ -69,4 +69,9 @@ scene.addEventListener('click', function (e) {
 
 const mAudio = new Audio('audio.wav');
 mAudio.loop = true;
-mAudio.play();
+mAudio.play().then(function (err, res) {
+    if (err) console.log(err);
+    else console.log(res);
+}).catch(function(error) {
+    console.log(error);
+});
